@@ -30,13 +30,18 @@ public class Point {
 
     public double distance() {
 
-        double xA = getX();
-        double yA = getY();
+        return distance(0,0);
+    }
 
-        double xB = 0;
-        double yB = 0;
+    public double distance(Point a) {
+        return distance(a.x, a.y);
 
-        return Math.sqrt((xB - xA) * (xB - xA) + (yB - yA) * (yB - yA));
+    }
 
+    public double distance(int x, int y) {
+
+        int xDiff = this.x - x;
+        int yDiff = this.y - y;
+        return Math.sqrt(xDiff * xDiff + yDiff * yDiff);
     }
 }
